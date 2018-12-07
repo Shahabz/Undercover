@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
 	public bool reloading = false;
 	public string weaponName;
 	public string weaponType;
@@ -15,9 +14,8 @@ public class Weapon : MonoBehaviour
 	public AudioSource gunShot;
 	public Animation anim;
 	public ParticleSystem muzzleFlash;
-
+	public GameObject bloodPrefab;
 	private Camera fpsCam;
-
 
 	void Start()
 	{
@@ -37,12 +35,18 @@ public class Weapon : MonoBehaviour
 		if (muzzleFlash && !muzzleFlash.isPlaying)
 			muzzleFlash.Play ();
 		RaycastHit hit;
+		// If we hit something
 		if (Physics.Raycast (fpsCam.transform.position, fpsCam.transform.forward, out hit)) 
 		{
+			// We hit an enemy
 			if (hit.transform.gameObject.tag == "Enemy") 
 			{
+				// Apply damage to enemy health
 				Enemy enemy = hit.transform.gameObject.GetComponentInParent<Enemy> ();
 				enemy.health -= damage;
+				// Create blood splatter effect
+				CreateBlood (hit.point, hit.transform.rotation);
+				//  We did enough damage to kill our enemy
 				if (enemy.health <= 0)
 				{
 					enemy.Dead ();
@@ -50,6 +54,11 @@ public class Weapon : MonoBehaviour
 				}
 			}
 		}
+	}
+	private void CreateBlood(Vector3 pos, Quaternion rot)
+	{
+		GameObject blood = Instantiate (bloodPrefab, pos, rot);
+		Destroy (blood, 1f);
 	}
 	public IEnumerator Reload(float reloadTime)
 	{

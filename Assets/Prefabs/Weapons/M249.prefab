@@ -529,6 +529,8 @@ MonoBehaviour:
   gunShot: {fileID: 82667663205332850}
   anim: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  bloodPrefab: {fileID: 1180003128076856, guid: 12e3195022a0e6a4683a4a55ffc7ed66,
+    type: 2}
 --- !u!137 &137802653516553494
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

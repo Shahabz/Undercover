@@ -21,11 +21,14 @@ public class Enemy : MonoBehaviour
 			bodyPart.isKinematic = isKinematic;
 	}
 
-	public void Dead(){
+	public void Dead()
+	{
 		SetKinematic (false);
 		enabled = false;
 		AI aiScript = gameObject.GetComponent<AI> ();
 		if (aiScript)
 			aiScript.enabled = false;
+		// Destroy the enemy after 5 seconds to free up mem
+		Destroy(gameObject, 5f);
 	}
 }

@@ -388,6 +388,8 @@ MonoBehaviour:
   gunShot: {fileID: 0}
   anim: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  bloodPrefab: {fileID: 1180003128076856, guid: 12e3195022a0e6a4683a4a55ffc7ed66,
+    type: 2}
 --- !u!114 &114820021790858640
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -601,6 +601,8 @@ MonoBehaviour:
   gunShot: {fileID: 82801055253193854}
   anim: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  bloodPrefab: {fileID: 1180003128076856, guid: 12e3195022a0e6a4683a4a55ffc7ed66,
+    type: 2}
 --- !u!198 &198048127192175446
 ParticleSystem:
   m_ObjectHideFlags: 1
