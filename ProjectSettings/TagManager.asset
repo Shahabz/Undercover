@@ -9,6 +9,7 @@ TagManager:
   - Powerup
   - WeaponPickup
   - GunModel
+  - Boss
   layers:
   - Default
   - TransparentFX

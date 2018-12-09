@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
 		if (Physics.Raycast (fpsCam.transform.position, fpsCam.transform.forward, out hit)) 
 		{
 			// We hit an enemy
-			if (hit.transform.gameObject.tag == "Enemy") 
+			if (hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Boss") 
 			{
 				// Apply damage to enemy health
 				Enemy enemy = hit.transform.gameObject.GetComponentInParent<Enemy> ();

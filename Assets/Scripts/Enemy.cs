@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		health = 100;
+		if (health == 0)
+			health = 100;
 		bodies = GetComponentsInChildren<Rigidbody> ();
 		SetKinematic (true);
 	}
