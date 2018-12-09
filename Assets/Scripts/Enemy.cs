@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour 
 {
 	public float health;
-
+	public NavMeshAI ai;
 	private Rigidbody[] bodies;
 	// Use this for initialization
 	void Start () 
@@ -26,10 +26,9 @@ public class Enemy : MonoBehaviour
 	{
 		SetKinematic (false);
 		enabled = false;
-		AI aiScript = gameObject.GetComponent<AI> ();
-		if (aiScript)
-			aiScript.enabled = false;
-		// Destroy the enemy after 5 seconds to free up mem
+		ai.anim.enabled = false;
+		ai.enabled = false;
+		// Destroy the enemy after 5 seconds to free up memory
 		Destroy(gameObject, 5f);
 	}
 }

@@ -10,6 +10,7 @@ TagManager:
   - WeaponPickup
   - GunModel
   - Boss
+  - Bullet
   layers:
   - Default
   - TransparentFX

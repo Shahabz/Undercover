@@ -11,7 +11,10 @@ public class Billz : MonoBehaviour
 	void Update () 
 	{
 		// Break armor
-		if (enemy.health <= 100)
+		if (enemy.health <= 100) {
 			moneyArmor.SetActive (false);
+			// Disable the script
+			this.enabled = false;
+		}
 	}
 }
