@@ -31,9 +31,9 @@ public class NavMeshAI : MonoBehaviour
 			return;
 		}
 		distanceFromTarget = Vector3.Distance (player.transform.position, transform.position);
-		if (distanceFromTarget < 14 && !spottedPlayer) 
+		if (distanceFromTarget < distanceDetection && !spottedPlayer) 
 		{
-			anim.SetBool ("spottedPlayer", true);
+			anim.SetBool ("SpottedPlayer", true);
 			anim.SetBool ("CanRun", true);
 			spottedPlayer = true;
 		}
@@ -54,6 +54,7 @@ public class NavMeshAI : MonoBehaviour
 	{
 		if (isAttacking)
 			return;
+
 		float shootDistance = Vector3.Distance (player.transform.position, transform.position);
 		if (shootDistance <= shootRange) {
 			if (Time.time > enemyWeapon.nextShot && !enemyWeapon.reloading && enemyWeapon.ammo.loadedAmmo != 0) {
@@ -66,6 +67,16 @@ public class NavMeshAI : MonoBehaviour
 	}
 	void Shoot()
 	{
+		/*
+		RaycastHit hit;
+		// Prevent the enemy from shooting if they are in front of a wall
+		if (Physics.Raycast (transform.position, transform.forward, out hit)) {
+			if (hit.transform.tag == "Wall") {
+				print ("Enemy facing a wall");
+				return;
+			}
+		}
+		*/
 		anim.SetTrigger ("Attack");
 		anim.SetBool ("CanRun", false);
 		agent.speed = 0;
