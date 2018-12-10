@@ -9,7 +9,10 @@ public class ToParkgarage : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Parkgarage");
+            if (MoneyManager.currentMoney >= 300)
+            {
+                SceneManager.LoadScene("Parkgarage");
+            }
         }
     }
 }

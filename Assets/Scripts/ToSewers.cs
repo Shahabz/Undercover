@@ -10,7 +10,10 @@ public class ToSewers : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("SewerLevel");
+            if (MoneyManager.currentMoney >= 100)
+            {
+                SceneManager.LoadScene("SewerLevel");
+            }
         }
     }
 }
