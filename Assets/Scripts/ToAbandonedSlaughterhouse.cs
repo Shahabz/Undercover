@@ -9,7 +9,10 @@ public class ToAbandonedSlaughterhouse : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("AbandonedSlaughterhouse");
+            if (MoneyManager.currentMoney >= 200)
+            {
+                SceneManager.LoadScene("AbandonedSlaughterhouse");
+            }
         }
     }
 }
