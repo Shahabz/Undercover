@@ -18,6 +18,7 @@ public class NavMeshAI : MonoBehaviour
 	public UnityEngine.AI.NavMeshAgent agent;
 	public Weapon enemyWeapon;
 	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player");
 		spottedPlayer = false;	
 		speed = agent.speed;
 		angularSpeed = agent.speed;
@@ -77,12 +78,18 @@ public class NavMeshAI : MonoBehaviour
 			}
 		}
 		*/
+
 		anim.SetTrigger ("Attack");
 		anim.SetBool ("CanRun", false);
 		agent.speed = 0;
 		agent.angularSpeed = 0;
-		if (enemyWeapon.muzzleFlash)
+		if (enemyWeapon.muzzleFlash && enemyWeapon.muzzleFlashes.Length <= 0)
 			enemyWeapon.muzzleFlash.Play ();
+		else if (enemyWeapon.muzzleFlashes.Length != 0) 
+		{
+			foreach (ParticleSystem flash in enemyWeapon.muzzleFlashes)
+				flash.Play();
+		}
 		if (enemyWeapon.gunShot)
 			enemyWeapon.gunShot.Play ();
 		enemyWeapon.ammo.loadedAmmo--;

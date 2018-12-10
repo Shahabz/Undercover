@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
 	public AudioSource gunShot;
 	public Animation anim;
 	public ParticleSystem muzzleFlash;
+	public ParticleSystem[] muzzleFlashes;
 	public GameObject bloodPrefab;
 	private Camera fpsCam;
 
