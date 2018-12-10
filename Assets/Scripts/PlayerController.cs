@@ -38,10 +38,12 @@ public class PlayerController : MonoBehaviour
 					scope.applySniperScope ();
 					scoped = true;
 				}
+				/*
 				// If our weapon is not a sniper and it has the capabilities to aim down sights
 				else if (currWeapon.weaponType != "Sniper" && currWeapon.anim.GetClip("ads")){
 					currWeapon.anim.Play ("ads");
 				}
+				*/
 			}
 			// Player released the right mouse button
 			else if (Input.GetButtonUp ("Fire2") && !currWeapon.reloading) 
@@ -53,11 +55,13 @@ public class PlayerController : MonoBehaviour
 					scope.disableSniperScope ();
 					scoped = false;
 				}
+				/*
 				// If our weapon is not a sniper and it has the capabilities to aim down sights
 				else if (currWeapon.weaponType != "Sniper" && currWeapon.anim.GetClip("ads")){
 					currWeapon.anim.Stop ("ads");
 					currWeapon.anim.Play ("idle");
 				}
+				*/
 			}
 			if (Input.GetButton("Fire1") && Time.time > currWeapon.nextShot && currWeapon.ammo.loadedAmmo >= 1 && !currWeapon.reloading)
 			{
