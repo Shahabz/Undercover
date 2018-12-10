@@ -17,23 +17,6 @@ public class RetryButton : MonoBehaviour
     // Update is called once per frame
     void TaskOnClick()
     {
-        // Create a temporary reference to the current scene.
-        Scene currentScene = SceneManager.GetActiveScene();
-
-        // Retrieve the name of this scene.
-        string sceneName = currentScene.name;
-
-        if(sceneName == "CasinoLevel"){
-            SceneManager.LoadScene("CasinoLevel");
-        }
-        else if(sceneName == "SewerLevel"){
-            SceneManager.LoadScene("SewerLevel");
-        }
-        else if(sceneName == "AbandonedSlaughterhouse"){
-            SceneManager.LoadScene("AbandonedSlaughterhouse");
-        }
-        else if(sceneName == "Parkgarage_demo"){
-            SceneManager.LoadScene("Parkgarage_demo");
-        }
+		SceneManager.LoadScene (GameManager.levelName);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class NavMeshAI : MonoBehaviour
 {
 	public bool isAttacking = false;
+	public bool isHealing = false;
 	public bool spottedPlayer = false;
 	public bool usesGun = true;
 	public float chanceToHit;
@@ -18,6 +19,7 @@ public class NavMeshAI : MonoBehaviour
 	public UnityEngine.AI.NavMeshAgent agent;
 	public Weapon enemyWeapon;
 	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player");
 		spottedPlayer = false;	
 		speed = agent.speed;
 		angularSpeed = agent.speed;
@@ -25,6 +27,8 @@ public class NavMeshAI : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (isHealing)
+			return;
 		if (enemyWeapon.ammo.loadedAmmo == 0 && !enemyWeapon.reloading) {
 			Debug.Log ("Enemy is reloading");
 			StartCoroutine (enemyWeapon.Reload (2f));
@@ -77,12 +81,18 @@ public class NavMeshAI : MonoBehaviour
 			}
 		}
 		*/
+
 		anim.SetTrigger ("Attack");
 		anim.SetBool ("CanRun", false);
 		agent.speed = 0;
 		agent.angularSpeed = 0;
-		if (enemyWeapon.muzzleFlash)
+		if (enemyWeapon.muzzleFlash && enemyWeapon.muzzleFlashes.Length <= 0)
 			enemyWeapon.muzzleFlash.Play ();
+		else if (enemyWeapon.muzzleFlashes.Length != 0) 
+		{
+			foreach (ParticleSystem flash in enemyWeapon.muzzleFlashes)
+				flash.Play();
+		}
 		if (enemyWeapon.gunShot)
 			enemyWeapon.gunShot.Play ();
 		enemyWeapon.ammo.loadedAmmo--;
@@ -91,7 +101,7 @@ public class NavMeshAI : MonoBehaviour
 		if (hitChance >= chanceToHit)
 			player.GetComponent<PlayerController> ().health -= (int) enemyWeapon.damage;
 	}
-	void StopAttack()
+	public void StopAttack()
 	{
 		anim.SetBool ("CanRun", true);
 		isAttacking = false;

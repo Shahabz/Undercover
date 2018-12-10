@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour 
 {
 	public bool scoped = false;
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		if (health <= 0)
+			SceneManager.LoadScene ("GameOverScreen");
 		if (currWeapon == null || !currWeapon.transform.parent.gameObject.activeSelf || currWeapon != weaponHandler.currWep.GetComponent<Weapon>())
 			currWeapon = weaponHandler.currWep.GetComponent<Weapon>();
 		else 

@@ -1590,13 +1590,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632255688228736}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.104, y: 1.185, z: 2.287}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 4516701265382194}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 180}
 --- !u!4 &4689304880311468
 Transform:
   m_ObjectHideFlags: 1
@@ -1694,7 +1694,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445415485057286}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.8484545, y: 0.5, z: 6.063}
+  m_LocalPosition: {x: -1.9739754, y: 0.5, z: 6.22631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4576350412943228}
@@ -2117,8 +2117,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1916848, y: 0.22591302, z: 0.30377486}
-  m_Center: {x: -0.0958424, y: -0.010052726, z: -0.000000044703484}
+  m_Size: {x: 0.41999263, y: 0.29647216, z: 0.30377486}
+  m_Center: {x: -0.03386979, y: 0.025226787, z: -0.00000004502062}
 --- !u!65 &65868234218645090
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2265,6 +2265,7 @@ MonoBehaviour:
   gunShot: {fileID: 82361263979026950}
   anim: {fileID: 0}
   muzzleFlash: {fileID: 198488810401633022}
+  muzzleFlashes: []
   bloodPrefab: {fileID: 1563951954656400, guid: fc3e8407244fd824daaaef074831f7e8,
     type: 2}
 --- !u!114 &114500571820421616
@@ -2307,6 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
+  isHealing: 0
   spottedPlayer: 0
   usesGun: 1
   chanceToHit: 75
@@ -2329,8 +2331,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07594371
-  m_Center: {x: -0.07594371, y: 0, z: 0}
+  m_Radius: 0.13804148
+  m_Center: {x: -0.075943716, y: 0.062097784, z: -0.000000015520827}
 --- !u!136 &136030992207905302
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2340,10 +2342,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.14435616
-  m_Height: 0.57742465
+  m_Radius: 0.20890366
+  m_Height: 0.41780746
   m_Direction: 0
-  m_Center: {x: -0.28871232, y: 0, z: 0}
+  m_Center: {x: -0.41935778, y: 0.03214477, z: 0.03240265}
 --- !u!136 &136037126601783864
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2392,10 +2394,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.14435612
-  m_Height: 0.57742447
+  m_Radius: 0.15093634
+  m_Height: 0.61686313
   m_Direction: 0
-  m_Center: {x: -0.28871223, y: 0, z: 0}
+  m_Center: {x: -0.30843145, y: 0.0065802317, z: -0.0000000033615393}
 --- !u!136 &136764730700945216
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2406,9 +2408,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12618832
-  m_Height: 0.4206277
+  m_Height: 0.43773463
   m_Direction: 0
-  m_Center: {x: -0.21031386, y: 0, z: 0}
+  m_Center: {x: -0.2188673, y: 0.00000000582384, z: -0.0000000016195262}
 --- !u!136 &136785987727194030
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2419,9 +2421,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12618831
-  m_Height: 0.42062765
+  m_Height: 0.7403444
   m_Direction: 0
-  m_Center: {x: -0.21031383, y: 0, z: 0}
+  m_Center: {x: -0.3701725, y: 0.000000009994965, z: 0.0000000067210166}
 --- !u!136 &136922510521008364
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2720,7 +2722,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2764,7 +2766,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2808,7 +2810,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2852,7 +2854,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2896,7 +2898,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2915,7 +2917,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000001192093, y: -0.00000011110251, z: -0.08497707}
+  m_ConnectedAnchor: {x: -0.0000001192093, y: -0.00000011110282, z: -0.08497719}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2940,7 +2942,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -2984,7 +2986,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -3028,7 +3030,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -3072,7 +3074,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -3116,7 +3118,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
