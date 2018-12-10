@@ -17,6 +17,8 @@ public class RetryButton : MonoBehaviour
     // Update is called once per frame
     void TaskOnClick()
     {
+		SceneManager.LoadScene (GameManager.levelName);
+		/*
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -35,5 +37,6 @@ public class RetryButton : MonoBehaviour
         else if(sceneName == "Parkgarage_demo"){
             SceneManager.LoadScene("Parkgarage_demo");
         }
+		*/
     }
 }

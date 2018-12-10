@@ -12,6 +12,7 @@ public class ToSewers : MonoBehaviour
         {
             if (MoneyManager.currentMoney >= 100)
             {
+				GameManager.levelName = "SewerLevel";
                 SceneManager.LoadScene("SewerLevel");
             }
         }

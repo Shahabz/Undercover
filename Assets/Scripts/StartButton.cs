@@ -14,6 +14,7 @@ public class StartButton : MonoBehaviour {
 
     // Update is called once per frame
     void TaskOnClick () {
+		GameManager.levelName = "CasinoLevel";
         SceneManager.LoadScene("CasinoLevel");
 	}
 }

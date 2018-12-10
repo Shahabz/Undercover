@@ -11,6 +11,7 @@ public class ToParkgarage : MonoBehaviour {
         {
             if (MoneyManager.currentMoney >= 300)
             {
+				GameManager.levelName = "Parkgarage";
                 SceneManager.LoadScene("Parkgarage");
             }
         }

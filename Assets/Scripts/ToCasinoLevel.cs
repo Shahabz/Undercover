@@ -9,6 +9,7 @@ public class ToCasinoLevel : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+			GameManager.levelName = "CasinoLevel";
             SceneManager.LoadScene("CasinoLevel");
         }
     }

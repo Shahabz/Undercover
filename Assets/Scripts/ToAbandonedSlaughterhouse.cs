@@ -11,6 +11,7 @@ public class ToAbandonedSlaughterhouse : MonoBehaviour {
         {
             if (MoneyManager.currentMoney >= 200)
             {
+				GameManager.levelName = "AbandonedSlaughterhouse";
                 SceneManager.LoadScene("AbandonedSlaughterhouse");
             }
         }
