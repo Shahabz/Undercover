@@ -5,6 +5,7 @@ using UnityEngine;
 public class NavMeshAI : MonoBehaviour
 {
 	public bool isAttacking = false;
+	public bool isHealing = false;
 	public bool spottedPlayer = false;
 	public bool usesGun = true;
 	public float chanceToHit;
@@ -26,6 +27,8 @@ public class NavMeshAI : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (isHealing)
+			return;
 		if (enemyWeapon.ammo.loadedAmmo == 0 && !enemyWeapon.reloading) {
 			Debug.Log ("Enemy is reloading");
 			StartCoroutine (enemyWeapon.Reload (2f));
@@ -98,7 +101,7 @@ public class NavMeshAI : MonoBehaviour
 		if (hitChance >= chanceToHit)
 			player.GetComponent<PlayerController> ().health -= (int) enemyWeapon.damage;
 	}
-	void StopAttack()
+	public void StopAttack()
 	{
 		anim.SetBool ("CanRun", true);
 		isAttacking = false;

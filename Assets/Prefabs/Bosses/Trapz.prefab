@@ -2611,9 +2611,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
+  isHealing: 0
   spottedPlayer: 0
   usesGun: 1
-  chanceToHit: 65
+  chanceToHit: 70
   distanceDetection: 10
   speed: 0
   angularSpeed: 0
