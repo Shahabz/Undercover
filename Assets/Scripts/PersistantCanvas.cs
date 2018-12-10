@@ -14,7 +14,6 @@ public class PersistantCanvas : MonoBehaviour {
 
     private void Update()
     {
-        //text.text = "Cash: " + MoneyManager.currentMoney;
-		text.text = "Level: " + GameManager.levelName;
+        text.text = "Cash: " + MoneyManager.currentMoney;
 	}
 }

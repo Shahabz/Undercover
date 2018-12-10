@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour
 			{
 				// Apply damage to enemy health
 				Enemy enemy = hit.transform.gameObject.GetComponentInParent<Enemy> ();
-				enemy.health -= damage;
+				enemy.TakeDamage (damage);
 				// Create blood splatter effect
 				CreateBlood (hit.point, hit.transform.rotation);
 				//  We did enough damage to kill our enemy

@@ -9,6 +9,7 @@ public class Drugz : MonoBehaviour
 	float healLength;
 	public GameObject cigar;
 	public bool healed = false;
+	public AudioSource smokeSound;
 	void Start()
 	{
 		RuntimeAnimatorController ac = ai.anim.runtimeAnimatorController;   //Get Animator controller
@@ -24,8 +25,10 @@ public class Drugz : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (enemy.health <= 0)
+		if (enemy.health <= 0) {
+			smokeSound.Stop ();
 			this.enabled = false;
+		}
 		if (enemy.health < 45 && !healed) {
 			healed = true;
 			StartCoroutine ("Healing");
@@ -39,7 +42,9 @@ public class Drugz : MonoBehaviour
 		ai.agent.speed = 0;
 		ai.agent.angularSpeed = 0;
 		ai.anim.SetTrigger ("Heal");
-		yield return new WaitForSeconds (8.3f);
+		yield return new WaitForSeconds (2.5f);
+		smokeSound.Play ();
+		yield return new WaitForSeconds (5.3f);
 		cigar.SetActive (false);
 		ai.anim.SetBool ("Heal", false);
 		enemy.health += 50f;

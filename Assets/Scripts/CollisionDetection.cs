@@ -7,7 +7,6 @@ public class CollisionDetection : MonoBehaviour
 	public bool speedBoost = false, jumpBoost = false;
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log (other.gameObject.tag);
 		if (other.gameObject.tag == "Powerup") {
 			other.gameObject.GetComponent<Powerup> ().ApplyPower (gameObject);
 			Destroy (other.gameObject);
