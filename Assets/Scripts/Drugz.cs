@@ -41,10 +41,11 @@ public class Drugz : MonoBehaviour
 		ai.anim.SetBool ("CanRun", false);
 		ai.agent.speed = 0;
 		ai.agent.angularSpeed = 0;
-		ai.anim.SetTrigger ("Heal");
-		yield return new WaitForSeconds (2.5f);
+
 		smokeSound.Play ();
-		yield return new WaitForSeconds (5.3f);
+		yield return new WaitForSeconds (.5f);
+		ai.anim.SetTrigger ("Heal");
+		yield return new WaitForSeconds (healLength-5.2f);
 		cigar.SetActive (false);
 		ai.anim.SetBool ("Heal", false);
 		enemy.health += 50f;

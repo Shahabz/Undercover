@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		if (health <= 0)
+		if (health <= 0) {
+			print ("dead");
 			SceneManager.LoadScene ("GameOverScreen");
+		}
 		if (currWeapon == null || !currWeapon.transform.parent.gameObject.activeSelf || currWeapon != weaponHandler.currWep.GetComponent<Weapon>())
 			currWeapon = weaponHandler.currWep.GetComponent<Weapon>();
 		else 
