@@ -2611,7 +2611,7 @@ MonoBehaviour:
   isHealing: 0
   spottedPlayer: 0
   usesGun: 1
-  chanceToHit: 80
+  chanceToHit: 90
   distanceDetection: 10
   speed: 0
   angularSpeed: 0

@@ -14,7 +14,11 @@ public class MoneyCollect : MonoBehaviour {
 			} else if (GameManager.levelName == "SewerLevel" && !GameManager.pickedSewerMoney) {
 				GameManager.pickedSewerMoney = true;
 				AddMoney ();
-			} else if (GameManager.levelName == "AbandonedSlaughterhouse" && !GameManager.pickedSlaughterMoney) {
+			} else if (GameManager.levelName == "Parkgarage" && !GameManager.pickedParkMoney) {
+				GameManager.pickedParkMoney = true;
+				AddMoney ();
+			}
+			else if (GameManager.levelName == "AbandonedSlaughterhouse" && !GameManager.pickedSlaughterMoney) {
 				GameManager.pickedSlaughterMoney = true;
 				AddMoney ();
 			}

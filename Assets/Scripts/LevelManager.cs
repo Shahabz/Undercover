@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
 			} 
 			else if (GameManager.levelName == "AbandonedSlaughterhouse") {
 				GameManager.clockerzDead = true;
-				SceneManager.LoadScene("YouWinScene");
+				SceneManager.LoadScene("YouWinScreen");
 			}
 		}
 	}

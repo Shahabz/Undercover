@@ -10,6 +10,7 @@ public static class GameManager {
 	public static bool pickedSewerMoney = false;
 	public static bool gunzzDead = false;
 	public static bool drugzDead = false;
+	public static bool pickedParkMoney = false;
 	public static bool pickedSlaughterMoney = false;
 	public static bool clockerzDead = false;
 }

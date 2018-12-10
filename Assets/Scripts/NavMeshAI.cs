@@ -71,7 +71,7 @@ public class NavMeshAI : MonoBehaviour
 	}
 	void Shoot()
 	{
-		/*
+		
 		RaycastHit hit;
 		// Prevent the enemy from shooting if they are in front of a wall
 		if (Physics.Raycast (transform.position, transform.forward, out hit)) {
@@ -80,7 +80,7 @@ public class NavMeshAI : MonoBehaviour
 				return;
 			}
 		}
-		*/
+
 
 		anim.SetTrigger ("Attack");
 		anim.SetBool ("CanRun", false);
