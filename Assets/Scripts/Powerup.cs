@@ -19,30 +19,31 @@ public class Powerup : MonoBehaviour
 		CollisionDetection playerCollision = player.GetComponent<CollisionDetection> ();
 
 		// Player is able to run faster and this powerup is only applied if it has not been picked up yet
-		if (powerupType == "SPEED" && !playerCollision.speedBoost) 
-		{
+		if (powerupType == "SPEED" && !playerCollision.speedBoost) {
 			fpsController.m_WalkSpeed *= 2f;
 			fpsController.m_RunSpeed *= 2f;
 			playerCollision.speedBoost = true;
 		}
 		// Player is able to jump higher and this powerup is only applied if it has not been picked up yet
-		else if (powerupType == "JUMP" && !playerCollision.jumpBoost)
-		{
+		else if (powerupType == "JUMP" && !playerCollision.jumpBoost) {
 			fpsController.m_JumpSpeed *= 2f;
 			playerCollision.jumpBoost = true;
 		}
 		// Increases the reserve ammo for all equipped weapons to their maximum value
-		else if (powerupType == "MAXAMMO")
-		{
+		else if (powerupType == "MAXAMMO") {
 			WeaponSwitching wepSlots = player.GetComponent<PlayerController> ().weaponHandler;
-			foreach (Transform wep in wepSlots.transform)
-			{
-				if (wep.childCount >= 1) 
-				{
+			foreach (Transform wep in wepSlots.transform) {
+				if (wep.childCount >= 1) {
 					Ammo wepAmmo = wep.GetChild (0).GetComponent<Ammo> ();
 					wepAmmo.reserveAmmo = wepAmmo.MAX_RESERVE_AMMO;
 				}
 			}
+		} 
+		// Player is able to exceed 100 health
+		else if (powerupType == "HEALTH")
+		{
+			PlayerController p = player.GetComponent<PlayerController> ();
+			p.health += 100;
 		}
 	}
 }
