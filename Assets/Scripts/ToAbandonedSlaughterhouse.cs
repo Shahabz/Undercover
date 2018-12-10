@@ -9,7 +9,7 @@ public class ToAbandonedSlaughterhouse : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            if (MoneyManager.currentMoney >= 200)
+            if (MoneyManager.currentMoney >= 300)
             {
 				GameManager.levelName = "AbandonedSlaughterhouse";
                 SceneManager.LoadScene("AbandonedSlaughterhouse");

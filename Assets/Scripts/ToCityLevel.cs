@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToLevel : MonoBehaviour {
+public class ToCityLevel : MonoBehaviour {
 
     public string level;
 

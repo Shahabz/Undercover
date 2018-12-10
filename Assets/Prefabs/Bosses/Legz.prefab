@@ -2279,7 +2279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93589ad00a1515a4caff7ff062a25105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 115
+  health: 50
   ai: {fileID: 114722109581352426}
 --- !u!114 &114600597784343630
 MonoBehaviour:

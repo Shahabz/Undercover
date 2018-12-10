@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,7 +113,59 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d3e8d0b6ee6ad4dc5ba87e123a4af540, type: 2}
+--- !u!1001 &251186996
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.740962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.865196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773516919583120, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114722109581352426, guid: feabdada56e76b249a9b50b30c3ea0b2,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 302678261}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feabdada56e76b249a9b50b30c3ea0b2, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &302678261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1034211216749102, guid: bb3acf7d95cc701439982807e9e401af,
+    type: 2}
+  m_PrefabInternal: {fileID: 1700024019}
 --- !u!1 &391349867
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +262,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953472198
 GameObject:
@@ -334,7 +386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1077007305
 Prefab:
@@ -415,7 +467,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4994710786909644, guid: 0aa2aa5319edde647a4859b01802b4cc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 23194242989534372, guid: 0aa2aa5319edde647a4859b01802b4cc,
         type: 2}
@@ -437,6 +489,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 444bef4919c7143d89599eb4671ae35d, type: 2}
+    - target: {fileID: 1574514380711756, guid: 0aa2aa5319edde647a4859b01802b4cc, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aa2aa5319edde647a4859b01802b4cc, type: 2}
   m_IsPrefabAsset: 0
@@ -477,7 +533,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4174636246596814, guid: bb3acf7d95cc701439982807e9e401af, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156792940779708, guid: bb3acf7d95cc701439982807e9e401af,
+        type: 2}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3acf7d95cc701439982807e9e401af, type: 2}
