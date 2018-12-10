@@ -8,8 +8,21 @@ public class MoneyCollect : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            MoneyManager.currentMoney += 100;
-            GameObject.Destroy(gameObject);
+			if (GameManager.levelName == "CasinoLevel" && !GameManager.pickedCasinoMoney) {
+				GameManager.pickedCasinoMoney = true;
+				AddMoney ();
+			} else if (GameManager.levelName == "SewerLevel" && !GameManager.pickedSewerMoney) {
+				GameManager.pickedSewerMoney = true;
+				AddMoney ();
+			} else if (GameManager.levelName == "AbandonedSlaughterhouse" && !GameManager.pickedSlaughterMoney) {
+				GameManager.pickedSlaughterMoney = true;
+				AddMoney ();
+			}
         }
     }
+	public void AddMoney()
+	{
+		MoneyManager.currentMoney += 100;
+		GameObject.Destroy(gameObject);
+	}
 }

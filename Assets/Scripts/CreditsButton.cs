@@ -10,6 +10,8 @@ public class CreditsButton : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
         creditsButton.onClick.AddListener(TaskOnClick);
 
     }

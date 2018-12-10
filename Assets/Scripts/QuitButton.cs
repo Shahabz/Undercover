@@ -7,6 +7,8 @@ public class QuitButton : MonoBehaviour {
     public Button quitButton;
 	// Use this for initialization
 	void Start () {
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
         quitButton.onClick.AddListener(TaskOnClick);
 	}
 	

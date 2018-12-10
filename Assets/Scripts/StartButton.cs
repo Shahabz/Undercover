@@ -8,6 +8,8 @@ public class StartButton : MonoBehaviour {
     public Button startButton;
 	// Use this for initialization
 	void Start () {
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
         startButton.onClick.AddListener(TaskOnClick);
 
     }
